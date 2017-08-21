@@ -1,0 +1,989 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta property="qc:admins" content="24414124076251217456375" />
+    <title>背包兔-做行程更简单 800多万网友原创旅游行程</title>
+    <meta name="keywords"
+          content="背包兔，行程工具，行程助手，旅游行程，旅行计划，旅游线路，行程单，自助游，自驾线路" />
+    <meta name="description"
+          content="背包兔提供最方便的旅游行程助手工具，便于自助游行程线路规划和制作旅游计划，并可与好友分享行程；同时提供全球目的地介绍，自助游攻略、自驾游行程、特价酒店预订、热门住宿攻略、旅游保险信息，是中国最专业的旅游行程制作网站。" />
+    <script type="text/javascript">
+        try{
+            if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
+                location.href = "http://m.beibaotu.com?ref=www_index";
+            }
+        }catch(e){}
+    </script>
+    <link rel='stylesheet' media='all' type='text/css' href='http://s3.beibaotu.com/stylesheets/global.css?1442565670'/><link rel='stylesheet' media='all' type='text/css' href='http://s0.beibaotu.com/javascripts/jquery-ui-1.11.1/jquery-ui.min.css?1419411815'/><link rel='stylesheet' media='all' type='text/css' href='http://s2.beibaotu.com/stylesheets/main/index.css?1442565670'/><script src='http://s3.beibaotu.com/javascripts/jquery.js?1372652129'></script><script src='http://s0.beibaotu.com/javascripts/application.js?1441014561'></script><script src='http://s3.beibaotu.com/javascripts/jquery-ui-1.11.1/jquery-ui.min.js?1414136587'></script><script src='http://s2.beibaotu.com/javascripts/jquery.lazyload.min.js?1441014561'></script><meta content="5d0a32c5-881b-43c2-a724-9d8a68e0b715" name="CSRFToken" />
+</head>
+<body>
+<div class="wap">
+    <script>
+        var WWW_DOMAIN = "http://www.beibaotu.com",
+            SEARCH_DOMAIN = "http://bbtsearch.beibaotu.com",
+            CURRENT_USER = "",
+            STATIC_DOMAIN = "http://s0.beibaotu.com",
+            MOBILE_DOMAIN  = "http://m.beibaotu.com";
+    </script>
+    <div id="header">
+        <div class="nav clearfix">
+            <div class="logo">
+                <a href="http://www.beibaotu.com" title="背包兔">
+                    <img alt="背包兔旅游行程制作" height="50" class="fixpng" width="150" src="http://s0.beibaotu.com/images/index/logo.png">
+                </a>
+            </div>
+
+            <div class="main-nav">
+                <ul class="clearfix">
+                    <li><a class=current-bg href="http://www.beibaotu.com" title="首页">首页</a></li>
+                    <li><a  href="http://www.beibaotu.com/plans" title="行程">行程</a></li>
+                    <li><a  href="http://www.beibaotu.com/travel_notes" title="游记">游记</a></li>
+                    <li><a  href="http://www.beibaotu.com/items" title="目的地">目的地</a></li>
+
+                    <li class="js-show-dropdown">
+                        <a  class="show-dropdwon " href="http://www.beibaotu.com/hotels">酒店</a>
+                        <div class="menu-bd-panel js-dropdown" style="display: none;">
+                            <div class="top"></div>
+                            <a class="hotel_index" href="http://www.beibaotu.com/hotels">酒店预订</a>
+                            <a class="hotel_rebate" href="/hotels/rebate">预订返现5%</a>
+                            <a class="hotel_book" href="http://www.beibaotu.com/gonglue">酒店攻略</a>
+                        </div>
+                    </li>
+
+                    <!-- <li><a  href="http://www.beibaotu.com/baoxian" title="保险">保险</a></li> -->
+
+                    <li class="js-show-dropdown">
+                        <a class="show-dropdwon " href="http://www.beibaotu.com/deals" title="特价">特价</a><span class="hot"></span>
+                        <div class="menu-bd-panel js-dropdown" style="display: none;">
+                            <div class="top"></div>
+                            <a class="deal" href="http://www.beibaotu.com/deals">特价线路</a>
+                            <span class="hot"></span>
+                            <a class="hotel" href="http://www.booking.com/dealspage.en.html?aid=819121&lang=zh" target="_blank">特价酒店</a>
+                            <a href="http://www.beibaotu.com/baoxian">保险</a>
+                        </div>
+                    </li>
+
+                    <li><a  href="http://www.beibaotu.com/plans/help" title="帮助">帮助</a></li>
+                </ul>
+            </div>
+            <div class="header_search">
+                <form action="/s/" method="get">
+                    <input type="text" class="input_search" id="input_search" placeholder='搜索行程、目的地 ' value=""/><a href="javascript:;" onclick="$(this).closest('form').submit();" class="search_btn fixpng"></a>
+                </form>
+            </div>
+
+            <div class="login">
+                <ul class="clearfix">
+                    <li><a href="http://oauth.beibaotu.com/register" title ="点击注册背包兔账号">注册</a></li>
+                    <li>|</li>
+                    <li class="navlogin menu">
+                        <a href="http://www.beibaotu.com/login" class=top-login>登录</a>
+                        <div class="menu-bd-panel login-container" style="display:none;">
+                            <a href="javascript:;" class="close">&nbsp;</a>
+                            <form accept-charset="UTF-8" action="/sessions" id="login_form" method="post">
+                                <p><input id="username" name="username" class="user" type="text" placeholder="用户名/邮箱" autofocus="autofocus"/></p>
+                                <p><input id="password" name="password" class="password" type="password" placeholder="密码" /></p>
+                                <p class="alignment"><label><input type="checkbox" name="remember_me"/> 记住我</label><a class="find-psd" href="http://www.beibaotu.com/find_password" style="font-size:12px;color:#bfbfbf;margin-left:10px;text-decoration:underline;">忘记密码？</a></p>
+                                <p><label id="login-notice" style="color: red;"></label></p>
+                                <p><input class="submit-btn" type="image" src="http://s0.beibaotu.com/images/base/transparent.png" /></p>
+                            </form>
+                        </div>
+                    </li>
+
+                    <li><a href="http://www.beibaotu.com/apps/login_from_qq?referer=/" class="qq fixpng" title="使用QQ账号登录">&nbsp;</a></li>
+                    <li><a href="http://www.beibaotu.com/apps/login_from_weibo?referer=/" class="sina fixpng" title="使用微博账号登录">&nbsp;</a></li>
+                </ul>
+            </div><a target="_blank" class="header_create" href="/plans/new"><span style="font-size:15px;">+</span> 创建行程</a>
+        </div>
+    </div><div id="main" class="clearfix">
+    <div class="intro">
+        <div class="bottom">
+            <a class="title icons" title="做行程 更简单"></a>
+            <div class="operate"><a href="/plans/new" class="create_plan icons" data-stat="btn_create_plan_index_top" title="创建我的行程">创建我的行程</a></div>
+            <div class="summary">
+                <p>背包兔旅行网是为喜欢旅行的朋友提供的行程之所和旅行分享的平台。</p>
+                <p>你可以参考地图合理地规划路线，安排每一天的景点、交通和住宿，估算好时间和费用，还可以将行程分享给好友。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <ul class="features">
+            <li class="plan icons">行程一目了然</li>
+            <li class="map icons">超大地图模式</li>
+            <li class="item icons">景点酒店推荐</li>
+            <li class="luggage icons">行李轻松安排</li>
+            <li class="cost icons">预算合理安排</li>
+            <li class="visa icons">送签单易导出</li>
+            <li class="app icons">支持手机同步</li>
+        </ul>
+
+        <div class="details">
+
+            <div class="plan clearfix">
+                <div class="left">
+                    <img alt="旅游行程" data-original="http://s3.beibaotu.com/images/index/v1/plan.png"/>
+                </div>
+
+                <div class="right text">
+                    <h2 class="title">行程一目了然</h2>
+                    <div class="summary">
+                        清晰的日常模式，规划好每一天的酒店、交通和住宿，提前做好备注，安排行程和费用，让你的旅游行程一目了然。
+                    </div>
+                    <a class="create_plan icons" data-stat="btn_create_plan_index_plan" href="/plans/new" title="创建行程">创建行程</a>
+                </div>
+            </div>
+
+            <div class="map clearfix">
+                <div class="left text">
+                    <h2 class="title">超大地图模式</h2>
+                    <div class="summary">
+                        Bigger than bigger的地图，让视野更加无拘无束，做起旅游计划来得心应手。
+                    </div>
+                    <a class="create_plan icons" href="/plans/new" data-stat="btn_create_plan_index_map" title="创建行程">创建行程</a>
+                </div>
+                <div class="right">
+                    <img alt="旅游地图" data-original="http://s0.beibaotu.com/images/index/v1/map.png"/>
+                </div>
+            </div>
+
+            <div class="item clearfix">
+                <div class="left">
+                    <img alt="旅游景点" data-original="http://s1.beibaotu.com/images/index/v1/item.png"/>
+                </div>
+                <div class="right text">
+                    <h2 class="title">景点酒店推荐</h2>
+                    <div class="summary">
+                        背包兔能自动获取附近推荐的酒店和景点，并轻松搜索和标注旅游目的地，合理规划自助游线路。
+                    </div>
+                    <div class="operate">
+                        全球900,000家优质酒店任你选择，特价天天有
+
+
+                        <!-- <a class="booking" title="预订酒店" href="http://www.booking.com?aid=335846&labl=index_item">预订酒店</a> -->
+
+                        <a class="booking" data-stat="main_index_booking" target="_blank" href="/hotels/rebate" title="立即预定">
+                            <span class="btn" ></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="luggage clearfix">
+                <div class="left text">
+                    <h2 class="title">行李轻松安排</h2>
+                    <div class="summary">
+                        完备的行李清单，让你从此不再为行李考虑步骤而遗憾，更不会为丢三落四而烦恼，轻松出游。
+                    </div>
+                    <div class="operate">
+                        <a class="baoxian" href="/baoxian" title="购买保险">购买保险</a>
+                    </div>
+                </div>
+                <div class="right">
+                    <img alt="行李清单" data-original="http://s2.beibaotu.com/images/index/v1/luggage.png"/>
+                </div>
+            </div>
+
+            <div class="cost clearfix">
+                <div class="left">
+                    <img alt="行程预算" data-original="http://s3.beibaotu.com/images/index/v1/cost.png"/>
+                </div>
+                <div class="right text">
+                    <h2 class="title">预算合理安排</h2>
+                    <div class="summary">
+                        出门玩，要玩的High，可不要让预算失控，影响你的旅行计划哦
+                    </div>
+                    <div class="operate">
+                    </div>
+                </div>
+            </div>
+
+            <div class="visa clearfix">
+                <div class="left text">
+                    <h2 class="title">送签单易导出</h2>
+                    <div class="summary">
+                        目的地自动翻译成多种当地语言，不再为自助行程规划的送签而烦恼，轻松搞定旅游签证。
+                    </div>
+                    <div class="operate">
+                        <!-- 办签证太繁琐？参考我们的旅游签证攻略 -->
+                    </div>
+                </div>
+                <div class="right">
+                    <img alt="行程单" data-original="http://s0.beibaotu.com/images/index/v1/visa.png"/>
+                </div>
+            </div>
+
+            <div class="app clearfix">
+                <div class="left">
+                    <img alt="背包兔APP同步" data-original="http://s1.beibaotu.com/images/index/v1/app.png"/>
+                </div>
+                <div class="right text">
+                    <h2 class="title">支持手机同步</h2>
+                    <div class="summary">
+                        背包兔手机APP同步旅游行程，边走边看，带你领略世界风光。
+                    </div>
+                    <div class="operate">
+                        精选数十万<a href="/plans" title="旅游行程" target="_blank">旅游行程</a>攻略，倾情与你分享。
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="user_plan clearfix">
+            <div class="head">
+                <h3>网友制作行程</h3>
+                <a class="more" href="/plans" title="更多旅游行程">更多旅游行程>></a>
+            </div>
+
+            <ul>
+                <li>
+                    <div class="info">
+                        <a href="plans/60x2z8" target="_blank" title="">
+                            <img class="cover" data-original="http://pic0.beibaotu.com/photos/000/00/42/32_o.jpg" alt="" />
+                            <p class="detail">
+                                <img class="avatar" alt="尤小丽" src="http://pic0.beibaotu.com/avatar/009/92/82/16_avatar_small.jpg"/>
+                                <span class="name">
+										大阪5日游</span>
+                                <span class="days_count">
+										5天
+									</span>
+                            </p>
+                        </a>
+                        <div class="stock">
+                            <a target="_blank" href="/items/0adyb8">
+                                上海浦东国际机场</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a6oi6">
+                                关西机场Kansai</a>
+                            <a> - </a>
+                            <a target="_blank" href="/hotels/goto?id=2111932&aid=335846&label=plans_index_hot_60x2z8">
+                                东横inn-船厂东</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a38hu">
+                                友都八喜 Yodobashi Umeda</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a38ub">
+                                大丸百货 梅田店</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0aqkf8">
+                                一蘭拉面 道頓堀店</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a7gz2">
+                                蟹道楽 本店</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a38gm">
+                                饺子の王将</a>
+                            <a> - </a>
+                            <a target="_blank" href="/hotels/goto?id=2111932&aid=335846&label=plans_index_hot_60x2z8">
+                                东横酒店inn-船厂东</a>
+                            <a></a>
+                        </div>
+
+                        <div class="bottom">
+                            <span title="浏览次数" class="icons view_count">567</span>
+
+                            <div class="right">
+                                <a href="javascript:;" class="icons calendar" title="日程表"></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="info">
+                        <a href="plans/90x119" target="_blank" title="France">
+                            <img class="cover" data-original="http://pic1.beibaotu.com/photos/000/00/42/33_o.jpg" alt="France" />
+                            <p class="detail">
+                                <img class="avatar" alt="小甜菜Ada" src="http://pic1.beibaotu.com/avatar/default/small/4.png"/>
+                                <span class="name">
+										France</span>
+                                <span class="days_count">
+										5天
+									</span>
+                            </p>
+                        </a>
+                        <div class="stock">
+                            <a target="_blank" href="/items/0a92db">
+                                Aeroport charles de gaulle 3</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a92dy">
+                                Moulin Plaza (穆林广场酒店)</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0ad66j">
+                                蒙马特尔</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a926o">
+                                卢浮宫</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0aqgzb">
+                                Tuileries Garden</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/10z1x5">
+                                协和广场</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/50z1xd">
+                                凯旋门</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/u0z1xh">
+                                埃菲尔铁塔</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a92dy">
+                                Moulin Plaza (穆林广场酒店)</a>
+                            <a></a>
+                        </div>
+
+                        <div class="bottom">
+                            <span title="浏览次数" class="icons view_count">375</span>
+
+                            <div class="right">
+                                <a href="javascript:;" class="icons cost" title="预算"></a>
+                                <a href="javascript:;" class="icons calendar" title="日程表"></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="info">
+                        <a href="plans/e0x1ek" target="_blank" title="">
+                            <img class="cover" data-original="http://pic1.beibaotu.com/photos/000/00/42/34_o.jpg" alt="" />
+                            <p class="detail">
+                                <img class="avatar" alt="Dyson__" src="http://pic1.beibaotu.com/avatar/009/92/10/17_avatar_small.jpg"/>
+                                <span class="name">
+										張家界4日游</span>
+                                <span class="days_count">
+										4天
+									</span>
+                            </p>
+                        </a>
+                        <div class="stock">
+                            <a target="_blank" href="/items/g0zgms">
+                                武陵源</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0ajmkr">
+                                十里畫廊</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0aqvry">
+                                宝峰湖</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a4k8n">
+                                溪布街</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/70htwd">
+                                金鞭溪</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0ajmkb">
+                                水繞四門</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0ajmpq">
+                                百龍天梯</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0aqno2">
+                                袁家界</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/ne0cam">
+                                杨家界</a>
+                            <a></a>
+                        </div>
+
+                        <div class="bottom">
+                            <span title="浏览次数" class="icons view_count">379</span>
+
+                            <div class="right">
+                                <a href="javascript:;" class="icons calendar" title="日程表"></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="info">
+                        <a href="plans/h0x2r9" target="_blank" title="">
+                            <img class="cover" data-original="http://pic1.beibaotu.com/photos/000/00/42/35_o.jpg" alt="" />
+                            <p class="detail">
+                                <img class="avatar" alt="yangkuikui" src="http://pic1.beibaotu.com/avatar/default/small/5.png"/>
+                                <span class="name">
+										慕尼黑-瑞士-奥地利-匈牙利...</span>
+                                <span class="days_count">
+										23天
+									</span>
+                            </p>
+                        </a>
+                        <div class="stock">
+                            <a target="_blank" href="/items/nd0acr">
+                                上海</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/80z1m3">
+                                慕尼黑新市政厅</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/a0z1mh">
+                                圣母教堂</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/30z1m4">
+                                玛利亚广场</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/z0z1mj">
+                                国王广场</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0adcfq">
+                                慕尼黑</a>
+                            <a> - </a>
+                            <a target="_blank" href="/hotels/goto?id=2211883&aid=335846&label=plans_index_hot_h0x2r9">
+                                4 You (4友酒店)</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/t0z1cy">
+                                德意志博物馆</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/z0z1m6">
+                                慕尼黑王宫博物馆</a>
+                            <a></a>
+                        </div>
+
+                        <div class="bottom">
+                            <span title="浏览次数" class="icons view_count">364</span>
+
+                            <div class="right">
+                                <a href="javascript:;" class="icons calendar" title="日程表"></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="info">
+                        <a href="plans/v0x16v" target="_blank" title="">
+                            <img class="cover" data-original="http://pic1.beibaotu.com/photos/000/00/42/36_o.jpg" alt="" />
+                            <p class="detail">
+                                <img class="avatar" alt="心随我动" src="http://pic0.beibaotu.com/avatar/default/small/4.png"/>
+                                <span class="name">
+										山西运城--乌鲁木齐自驾16...</span>
+                                <span class="days_count">
+										22天
+									</span>
+                            </p>
+                        </a>
+                        <div class="stock">
+                            <a target="_blank" href="/items/x0znp7">
+                                宝塔山旅游区</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a6hry">
+                                中卫市</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a7kf2">
+                                武威市</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0aln53">
+                                运城市</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/p0zgh1">
+                                镇远楼</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a6z5a">
+                                张掖丹霞国家地质公园停车场</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/pf0axh">
+                                酒泉</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/q20q7a">
+                                嘉峪关 钟鼓楼</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/i0znr2">
+                                万里长城第一墩</a>
+                            <a></a>
+                        </div>
+
+                        <div class="bottom">
+                            <span title="浏览次数" class="icons view_count">857</span>
+
+                            <div class="right">
+                                <a href="javascript:;" class="icons cost" title="预算"></a>
+                                <a href="javascript:;" class="icons luggage" title="行李"></a>
+                                <a href="javascript:;" class="icons calendar" title="日程表"></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="info">
+                        <a href="plans/w0x1jt" target="_blank" title="">
+                            <img class="cover" data-original="http://pic1.beibaotu.com/photos/000/00/42/37_o.jpg" alt="" />
+                            <p class="detail">
+                                <img class="avatar" alt="StellaXia" src="http://pic3.beibaotu.com/avatar/default/small/2.png"/>
+                                <span class="name">
+										西安4日游</span>
+                                <span class="days_count">
+										6天
+									</span>
+                            </p>
+                        </a>
+                        <div class="stock">
+                            <a target="_blank" href="/items/0a92h3">
+                                南大街2</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a92hm">
+                                顺城巷</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a92h3">
+                                酒店</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0all61">
+                                （备选）洒金桥（老李家胡辣汤）</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a9jns">
+                                （灌汤蒸饺）大麦市街</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a92q1">
+                                西安城牆</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/h0znpl">
+                                大明宫遗址</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a92ou">
+                                柳巷麵館</a>
+                            <a> - </a>
+                            <a target="_blank" href="/items/0a1n16">
+                                陕西省历史博物馆（备选）</a>
+                            <a></a>
+                        </div>
+
+                        <div class="bottom">
+                            <span title="浏览次数" class="icons view_count">408</span>
+
+                            <div class="right">
+                                <a href="javascript:;" class="icons calendar" title="日程表"></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="destinations_box">
+        <div class="destinations">
+            <h3>热门目的地</h3>
+            <div class="hot_spot">
+                <div class="internal">
+                    <h4>境内推荐目的地</h4>
+                    <h5>海南</h5>
+                    <ul>
+                        <li><a href="/items/6h0h7b" title="三亚">三亚</a></li>
+                        <li><a href="/items/6u0qaz" title="海口">海口</a></li>
+                    </ul>
+                    <h5>云南</h5>
+                    <ul>
+                        <li><a href="/items/0a4dyk" title="丽江">丽江</a></li>
+                        <li><a href="/items/cy901c" title="昆明">昆明</a></li>
+                        <li><a href="/items/0a46tn" title="香格里拉">香格里拉</a></li>
+                        <li><a href="/items/2am01x" title="大理">大理</a></li>
+                        <li><a href="/items/0a478l" title="泸沽湖">泸沽湖</a></li>
+                        <li><a href="/items/jqc0u9" title="腾冲">腾冲</a></li>
+                        <li><a href="/items/e0zcqr" title="双廊">双廊</a></li>
+                    </ul>
+                    <h5>福建</h5>
+                    <ul>
+
+                        <li><a href="/items/0a4dys" title="厦门">厦门</a></li>
+                        <li><a href="/items/i0zu9t" title="鼓浪屿">鼓浪屿</a></li>
+                        <li><a href="/items/960k2i" title="厦门大学">厦门大学</a></li>
+                        <li><a href="/items/z0zulo" title="日光岩">日光岩</a></li>
+                        <li><a href="/items/0a43ej" title="曾厝垵">曾厝垵</a></li>
+                        <li><a href="/items/70zulg" title="菽庄花园">菽庄花园</a></li>
+                        <li><a href="/items/wv0q7t" title="福州">福州</a></li>
+                    </ul>
+                    <h5>川渝</h5>
+                    <ul>
+
+                        <li><a href="/items/vr40v1" title="九寨沟">九寨沟</a></li>
+                        <li><a href="/items/ir20d7" title="成都">成都</a></li>
+                        <li><a href="/items/x0zcu1" title="杜甫草堂">杜甫草堂</a></li>
+                        <li><a href="/items/w0zce7" title="武侯祠">武侯祠</a></li>
+                        <li><a href="/items/jw074s" title="春熙路">春熙路</a></li>
+                        <li><a href="/items/c0zcwc" title="锦里">锦里</a></li>
+                        <li><a href="/items/6707x9" title="峨眉山">峨眉山</a></li>
+                        <li><a href="/items/u0zc5q" title="都江堰">都江堰</a></li>
+                        <li><a href="/items/e20q38" title="稻城">稻城</a></li>
+                        <li><a href="/items/5w0q32" title="亚丁">亚丁</a></li>
+                        <li><a href="/items/rp0qqn" title="康定">康定</a></li>
+                        <li><a href="/items/ivb07i" title="重庆">重庆</a></li>
+                        <li><a href="/items/l0zeff" title="磁器口">磁器口</a></li>
+                    </ul>
+                    <h5>广西贵州</h5>
+                    <ul>
+
+                        <li><a href="/items/t4e0fo" title="桂林">桂林</a></li>
+                        <li><a href="/items/nd0h5q" title="南宁">南宁</a></li>
+                        <li><a href="/items/1s0oh1" title="珠海">珠海</a></li>
+                        <li><a href="/items/7la07m" title="贵阳">贵阳</a></li>
+                    </ul>
+                    <h5>京津冀</h5>
+                    <ul>
+
+                        <li><a href="/items/0a46qj" title="北京">北京</a></li>
+                        <li><a href="/items/n0zehy" title="故宫">故宫</a></li>
+                        <li><a href="/items/co071m" title="天安门">天安门</a></li>
+                        <li><a href="/items/v0zeqt" title="颐和园">颐和园</a></li>
+                        <li><a href="/items/20zifm" title="天坛">天坛</a></li>
+                        <li><a href="/items/oz0joz" title="王府井大街">王府井大街</a></li>
+                        <li><a href="/items/c0zi92" title="圆明园">圆明园</a></li>
+                        <li><a href="/items/r0zi3c" title="恭王府">恭王府</a></li>
+                        <li><a href="/items/af0q4f" title="天津">天津</a></li>
+                    </ul>
+                    <h5>东北</h5>
+                    <ul>
+
+                        <li><a href="/items/jp0aqu" title="大连">大连</a></li>
+                        <li><a href="/items/0hyyau" title="哈尔滨">哈尔滨</a></li>
+                        <li><a href="/items/ye0wgm" title="长春">长春</a></li>
+                        <li><a href="/items/y50d4x" title="沈阳">沈阳</a></li>
+                        <li><a href="/items/4l0alp" title="海拉尔">海拉尔</a></li>
+                    </ul>
+
+                    <h5>华北</h5>
+                    <ul>
+                        <li><a href="/items/ks0aae" title="青岛">青岛</a></li>
+                        <li><a href="/items/c0zevc" title="八大关">八大关</a></li>
+                        <li><a href="/items/ji0q3q" title="烟台">烟台</a></li>
+                        <li><a href="/items/lj0ocz" title="济南">济南</a></li>
+                        <li><a href="/items/80zexo" title="泰山">泰山</a></li>
+                        <li><a href="/items/ij50ds" title="太原">太原</a></li>
+                    </ul>
+                    <h5>华东</h5>
+                    <ul>
+                        <li><a href="/items/3jl0sz" title="杭州">杭州</a></li>
+                        <li><a href="/items/j0zur3" title="西湖">西湖</a></li>
+                        <li><a href="/items/70z5tc" title="灵隐寺">灵隐寺</a></li>
+                        <li><a href="/items/nd0acr" title="上海">上海</a></li>
+                        <li><a href="/items/f0ze7j" title="东方明珠">东方明珠</a></li>
+                        <li><a href="/items/n306pn" title="外滩">外滩</a></li>
+                        <li><a href="/items/ip0z6y" title="田子坊">田子坊</a></li>
+                        <li><a href="/items/z0zejy" title="杜莎夫人蜡像馆">杜莎夫人蜡像馆</a></li>
+                        <li><a href="/items/kzs0uy" title="苏州">苏州</a></li>
+                        <li><a href="/items/p0z56c" title="拙政园">拙政园</a></li>
+                        <li><a href="/items/60z59i" title="虎丘">虎丘</a></li>
+                        <li><a href="/items/0a46n6" title="乌镇">乌镇</a></li>
+                        <li><a href="/items/e80org" title="扬州">扬州</a></li>
+                        <li><a href="/items/0a4ds4" title="无锡">无锡</a></li>
+                        <li><a href="/items/vs0a85" title="宁波">宁波</a></li>
+                        <li><a href="/items/dct0kg" title="南京">南京</a></li>
+                        <li><a href="/items/baw0ks" title="夫子庙">夫子庙</a></li>
+                        <li><a href="/items/g0z5cv" title="中山陵">中山陵</a></li>
+                        <li><a href="/items/10z5pm" title="南京总统府">南京总统府</a></li>
+                        <li><a href="/items/cf0l8a" title="玄武湖">玄武湖</a></li>
+                        <li><a href="/items/60z5e7" title="明孝陵">明孝陵</a></li>
+                        <li><a href="/items/v10hyl" title="黄山">黄山</a></li>
+                    </ul>
+                    <h5>中部</h5>
+                    <ul>
+                        <li><a href="/items/1pb0pw" title="西安">西安</a></li>
+                        <li><a href="/items/q0znfj" title="兵马俑">兵马俑</a></li>
+                        <li><a href="/items/p0znnd" title="钟鼓楼">钟鼓楼</a></li>
+                        <li><a href="/items/h0znfr" title="大雁塔">大雁塔</a></li>
+                        <li><a href="/items/q0znfv" title="华清池">华清池</a></li>
+                        <li><a href="/items/w0znpj" title="大唐芙蓉园">大唐芙蓉园</a></li>
+                        <li><a href="/items/4p0avz" title="洛阳">洛阳</a></li>
+                        <li><a href="/items/0a4k8l" title="张家界">张家界</a></li>
+                        <li><a href="/items/pf0d78" title="凤凰">凤凰</a></li>
+                        <li><a href="/items/ue0aei" title="长沙">长沙</a></li>
+                        <li><a href="/items/s6r0hq" title="武汉">武汉</a></li>
+                        <li><a href="/items/0attwd" title="婺源">婺源</a></li>
+                    </ul>
+                    <h5>西北</h5>
+                    <ul>
+                        <li><a href="/items/h0zgql" title="敦煌">敦煌</a></li>
+                        <li><a href="/items/270w7a" title="嘉峪关">嘉峪关</a></li>
+                        <li><a href="/items/i80hf1" title="张掖">张掖</a></li>
+                        <li><a href="/items/t20hu5" title="兰州">兰州</a></li>
+                        <li><a href="/items/ub0q27" title="西宁">西宁</a></li>
+                        <li><a href="/items/4r0hue" title="青海湖">青海湖</a></li>
+                        <li><a href="/items/m60ads" title="银川">银川</a></li>
+                        <li><a href="/items/c706by" title="乌鲁木齐">乌鲁木齐</a></li>
+                    </ul>
+
+                    <h5>西藏</h5>
+                    <ul>
+                        <li><a href="/items/lr0hw2" title="拉萨">拉萨</a></li>
+                        <li><a href="/items/n0zmqb" title="布达拉宫">布达拉宫</a></li>
+                        <li><a href="/items/as0ass" title="纳木错">纳木错</a></li>
+                        <li><a href="/items/h0zmow" title="大昭寺">大昭寺</a></li>
+                        <li><a href="/items/8t0h94" title="林芝">林芝</a></li>
+                        <li><a href="/items/5r0hww" title="日喀则">日喀则</a></li>
+                        <li><a href="/items/os0h1d" title="波密">波密</a></li>
+                    </ul>
+                </div>
+                <div class="foreign">
+                    <h4>出境推荐目的地</h4>
+                    <h5>港澳台</h5>
+                    <ul>
+                        <li><a href="/items/sr403h" title="香港">香港</a></li>
+                        <li><a href="/items/0ao73i" title="星光大道">星光大道</a></li>
+                        <li><a href="/items/70zkbg" title="海洋公园">海洋公园</a></li>
+                        <li><a href="/items/k0zkv6" title="铜锣湾">铜锣湾</a></li>
+                        <li><a href="/items/xz0ok3" title="澳门">澳门</a></li>
+                        <li><a href="/items/vu0k8g" title="威尼斯人">威尼斯人</a></li>
+                        <li><a href="/items/90zkp9" title="玫瑰圣母堂">玫瑰圣母堂</a></li>
+                        <li><a href="/items/iyb0hy" title="台湾">台湾</a></li>
+                        <li><a href="/items/pg0oud" title="台北">台北</a></li>
+                        <li><a href="/items/10zky3" title="台北101">台北101</a></li>
+                        <li><a href="/items/w0zjfm" title="西门町">西门町</a></li>
+                        <li><a href="/items/q0zsab" title="台北总统府">台北总统府</a></li>
+                        <li><a href="/items/50zs4s" title="台北故宫博物院">台北故宫博物院</a></li>
+                        <li><a href="/items/30zsq1" title="士林夜市">士林夜市</a></li>
+                        <li><a href="/items/ta0iya" title="高雄">高雄</a></li>
+                        <li><a href="/items/ma0unr" title="台中">台中</a></li>
+                        <li><a href="/items/hr06i7" title="九份">九份</a></li>
+                        <li><a href="/items/jq0d5x" title="花莲">花莲</a></li>
+                        <li><a href="/items/9h0d5f" title="阿里山">阿里山</a></li>
+                        <li><a href="/items/x90hau" title="垦丁">垦丁</a></li>
+                    </ul>
+                    <h5>日韩</h5>
+                    <ul>
+                        <li><a href="/items/uhe0hm" title="日本">日本</a></li>
+                        <li><a href="/items/pb0qh5" title="东京">东京</a></li>
+                        <li><a href="/items/unc0nd" title="大阪">大阪</a></li>
+                        <li><a href="/items/4z0dwj" title="京都">京都</a></li>
+                        <li><a href="/items/c4d0gh" title="银座">银座</a></li>
+                        <li><a href="/items/r0zjg4" title="浅草寺">浅草寺</a></li>
+                        <li><a href="/items/90zjnb" title="东京塔">东京塔</a></li>
+                        <li><a href="/items/n70e7s" title="韩国">韩国</a></li>
+                        <li><a href="/items/pkj086" title="首尔">首尔</a></li>
+                        <li><a href="/items/10zjeb" title="景福宫">景福宫</a></li>
+                        <li><a href="/items/k20m7p" title="首尔塔">首尔塔</a></li>
+                    </ul>
+
+                    <h5>东南亚</h5>
+                    <ul>
+                        <li><a href="/items/ufr0lz" title="巴厘岛">巴厘岛</a></li>
+                        <li><a href="/items/xo30wu" title="新加坡">新加坡</a></li>
+                        <li><a href="/items/bv0aud" title="马来西亚">马来西亚</a></li>
+                        <li><a href="/items/m50hl8" title="吉隆坡">吉隆坡</a></li>
+                        <li><a href="/items/l130e6" title="马六甲">马六甲</a></li>
+                        <li><a href="/items/jdk09b" title="沙巴">沙巴</a></li>
+                        <li><a href="/items/hmr0am" title="泰国">泰国</a></li>
+                        <li><a href="/items/sa0jlb" title="曼谷">曼谷</a></li>
+                        <li><a href="/items/k0z896" title="大皇宫">大皇宫</a></li>
+                        <li><a href="/items/s0z89l" title="郑王庙">郑王庙</a></li>
+                        <li><a href="/items/qa0htr" title="普吉岛">普吉岛</a></li>
+                        <li><a href="/items/52q0uz" title="清迈">清迈</a></li>
+                        <li><a href="/items/td0dmi" title="苏梅岛">苏梅岛</a></li>
+                    </ul>
+
+                    <h5>南亚及中南半岛</h5>
+                    <ul>
+                        <li><a href="/items/0attmz" title="马尔代夫">马尔代夫</a></li>
+                        <li><a href="/items/3s0heg" title="越南">越南</a></li>
+                        <li><a href="/items/k40u7b" title="河内">河内</a></li>
+                        <li><a href="/items/ln07lx" title="美奈">美奈</a></li>
+                        <li><a href="/items/mr0dfm" title="芽庄">芽庄</a></li>
+                        <li><a href="/items/ef0hep" title="胡志明市">胡志明市</a></li>
+                        <li><a href="/items/c2m0mt" title="柬埔寨">柬埔寨</a></li>
+                        <li><a href="/items/dgb0cn" title="暹粒">暹粒</a></li>
+                        <li><a href="/items/k0zjc3" title="吴哥窟">吴哥窟</a></li>
+                        <li><a href="/items/c204i7" title="金边">金边</a></li>
+                        <li><a href="/items/5q07at" title="印度">印度</a></li>
+                        <li><a href="/items/b20aj7" title="新德里">新德里</a></li>
+                        <li><a href="/items/m207j4" title="尼泊尔">尼泊尔</a></li>
+                        <li><a href="/items/gwf03c" title="加德满都">加德满都</a></li>
+                        <li><a href="/items/pe02jr" title="博克拉">博克拉</a></li>
+                        <li><a href="/items/hr06gk" title="科伦坡">科伦坡</a></li>
+                        <li><a href="/items/xs06gp" title="斯里兰卡">斯里兰卡</a></li>
+                        <li><a href="/items/l90dhf" title="缅甸">缅甸</a></li>
+                        <li><a href="/items/ve0dlq" title="老挝">老挝</a></li>
+                    </ul>
+                    <h5>欧洲</h5>
+
+                    <ul>
+                        <li><a href="/items/0a4x96" title="伦敦">伦敦</a></li>
+                        <li><a href="/items/u0z16k" title="西敏寺">西敏寺</a></li>
+                        <li><a href="/items/60z16m" title="白金汉宫">白金汉宫</a></li>
+                        <li><a href="/items/j0z165" title="大英博物馆">大英博物馆</a></li>
+                        <li><a href="/items/b0z16n" title="大笨钟">大笨钟</a></li>
+                        <li><a href="/items/90z16s" title="伦敦眼">伦敦眼</a></li>
+                        <li><a href="/items/m0z16z" title="伦敦塔桥">伦敦塔桥</a></li>
+                        <li><a href="/items/8s0ykc" title="布拉格">布拉格</a></li>
+                        <li><a href="/items/8d0di9" title="法国">法国</a></li>
+                        <li><a href="/items/vp0o9d" title="巴黎">巴黎</a></li>
+                        <li><a href="/items/u0z1xa" title="巴黎圣母院">巴黎圣母院</a></li>
+                        <li><a href="/items/w0z1xq" title="卢浮宫">卢浮宫</a></li>
+                        <li><a href="/items/10z1x5" title="协和广场">协和广场</a></li>
+                        <li><a href="/items/50z1xd" title="凯旋门">凯旋门</a></li>
+                        <li><a href="/items/40z1xk" title="巴士底广场">巴士底广场</a></li>
+                        <li><a href="/items/u0z1xh" title="埃菲尔铁塔">埃菲尔铁塔</a></li>
+                        <li><a href="/items/v508di" title="里昂">里昂</a></li>
+                        <li><a href="/items/2p0v34" title="马赛">马赛</a></li>
+                        <li><a href="/items/hal0cb" title="意大利">意大利</a></li>
+                        <li><a href="/items/e30h41" title="罗马">罗马</a></li>
+                        <li><a href="/items/l0z96v" title="许愿池">许愿池</a></li>
+                        <li><a href="/items/wo0ycg" title="米兰">米兰</a></li>
+                        <li><a href="/items/m0z19h" title="米兰大教堂">米兰大教堂</a></li>
+                        <li><a href="/items/a10yny" title="佛罗伦萨">佛罗伦萨</a></li>
+                        <li><a href="/items/790yga" title="威尼斯">威尼斯</a></li>
+                        <li><a href="/items/ao078p" title="瑞士">瑞士</a></li>
+                        <li><a href="/items/6u0a7u" title="苏黎世">苏黎世</a></li>
+                        <li><a href="/items/kd0oxt" title="少女峰">少女峰</a></li>
+                        <li><a href="/items/qv0xp7" title="卢塞恩">卢塞恩</a></li>
+                        <li><a href="/items/qw0v7y" title="日内瓦">日内瓦</a></li>
+                        <li><a href="/items/kj0dks" title="德国">德国</a></li>
+                        <li><a href="/items/fx0ju7" title="慕尼黑">慕尼黑</a></li>
+                        <li><a href="/items/iz0oii" title="法兰克福">法兰克福</a></li>
+                        <li><a href="/items/ja01cz" title="科隆">科隆</a></li>
+                        <li><a href="/items/ai02sq" title="汉堡">汉堡</a></li>
+                        <li><a href="/items/a80h6e" title="希腊">希腊</a></li>
+                        <li><a href="/items/h40on2" title="维也纳">维也纳</a></li>
+                        <li><a href="/items/0a49zw" title="马德里">马德里</a></li>
+                        <li><a href="/items/0a4z78" title="巴塞罗那">巴塞罗那</a></li>
+                        <li><a href="/items/0aqzcu" title="里斯本">里斯本</a></li>
+                        <li><a href="/items/130oc6" title="阿姆斯特丹">阿姆斯特丹</a></li>
+                        <li><a href="/items/p60x75" title="卢森堡">卢森堡</a></li>
+                        <li><a href="/items/1tb0r3" title="梵蒂冈">梵蒂冈</a></li>
+                    </ul>
+
+                    <h5>大洋洲</h5>
+                    <ul>
+                        <li><a href="/items/p40oek" title="澳大利亚">澳大利亚</a></li>
+                        <li><a href="/items/0hyyib" title="悉尼">悉尼</a></li>
+                        <li><a href="/items/cu07og" title="墨尔本">墨尔本</a></li>
+                        <li><a href="/items/350qm9" title="黄金海岸">黄金海岸</a></li>
+                        <li><a href="/items/xt0an2" title="奥克兰">奥克兰</a></li>
+                        <li><a href="/items/vo0ayj" title="基督城">基督城</a></li>
+                        <li><a href="/items/mq0ay9" title="皇后镇">皇后镇</a></li>
+                    </ul>
+                    <h5>中东非洲</h5>
+                    <ul>
+                        <li><a href="/items/310kwy" title="迪拜">迪拜</a></li>
+                    </ul>
+                    <h5>美洲</h5>
+                    <ul>
+                        <li><a href="/items/tx0hii" title="多伦多">多伦多</a></li>
+                        <li><a href="/items/lo0hwa" title="温哥华">温哥华</a></li>
+                        <li><a href="/items/pm0q3t" title="美国">美国</a></li>
+                        <li><a href="/items/9mb03m" title="纽约">纽约</a></li>
+                        <li><a href="/items/r0zwe9" title="华尔街">华尔街</a></li>
+                        <li><a href="/items/ip0hlj" title="洛杉矶">洛杉矶</a></li>
+                        <li><a href="/items/boi0nt" title="好莱坞">好莱坞</a></li>
+                        <li><a href="/items/n0zwls" title="星光大道">星光大道</a></li>
+                        <li><a href="/items/4x03ad" title="圣莫尼卡">圣莫尼卡</a></li>
+                        <li><a href="/items/drv0en" title="旧金山">旧金山</a></li>
+                        <li><a href="/items/d0zwmf" title="金门大桥">金门大桥</a></li>
+                        <li><a href="/items/g0zwmg" title="九曲花街">九曲花街</a></li>
+                        <li><a href="/items/6k0hjp" title="费城">费城</a></li>
+                        <li><a href="/items/t90h21" title="波士顿">波士顿</a></li>
+                        <li><a href="/items/sr06zy" title="芝加哥">芝加哥</a></li>
+                        <li><a href="/items/ya0hla" title="拉斯维加斯">拉斯维加斯</a></li>
+                        <li><a href="/items/60zwe8" title="第五大道">第五大道</a></li>
+                    </ul>
+                </div>
+            </div></div>
+    </div>
+
+    <div class="friend_links">
+        <div class="left">
+            <a href="http://wenda.beibaotu.com" target="_blank">旅游问答</a>
+            <a href="http://travel.poco.cn/" target="_blank">poco旅游</a>
+            <a href="http://www.iqiyi.com/lvyou/" target="_blank">奇艺旅游</a>
+            <a href="http://huoche.cncn.com/" target="_blank">火车时刻表</a>
+            <a href="http://www.becod.com/" target="_blank">百酷特色住宿</a>
+            <a href="http://www.517huwai.com/" target="_blank">517旅行</a>
+            <a href="http://bbs.beibaotu.com" target="_blank">旅游论坛</a>
+            <a href=" http://www.tvtour.com.cn" target="_blank">环视旅游网</a>
+            <a href="http://www.youtx.com" target="_blank">短租房</a>
+            <a href="http://www.16fan.com" target="_blank">十六番</a>
+            <a href="http://visa.beibaotu.com/" target="_blank">旅游签证</a>
+            <a href="http://www.beibaotu.com/items/" target="_blank">旅游景点</a>
+            <a href="http://cn.toursforfun.com/" target="_blank">途风网</a>
+            <a href="http://www.beibaotu.com/hotels" target="_blank">特价酒店</a>
+            <a href="http://www.cntour365.com/" target="_blank">沈阳旅行社</a>
+            <a href="http://www.51you.com/" target="_blank">51YOU旅游网</a>
+            <a href="http://www.wlkst.com/" target="_blank">武隆旅游</a>
+            <a href="http://dingpiao.tieyou.com/" target="_blank">动车</a>
+            <a href="http://flight.qunar.com/" target="_blank">机票</a>
+            <a href="http://www.cdyou.net/" target="_blank">长岛旅游攻略</a>
+            <a href="http://travel.fengniao.com/" target="_blank">旅游攻略</a>
+            <a href="http://www.kmguolv.com/" target="_blank">昆明旅行社</a>
+            <a href="http://www.ctsscs.com/" target="_blank">四川成都旅行社</a>
+            <a href="http://www.kopu.cn/" target="_blank">国际机票</a>
+            <a href="http://news.beibaotu.com" target="_blank">旅游资讯</a>
+            <a href="http://wan.cncn.com" target="_blank">放心游商城</a>
+            <a href="http://www.weilver.com" target="_blank">出境特价机票</a>
+            <a href="http://www.shijiebang.com" target="_blank">世界邦自由行</a>
+            <a href="http://www.slvdy.com/" target="_blank">石榴微电影网</a>
+        </div>
+
+        <!--
+        <div class="right">
+              <h3 class="head">关注背包兔</h3>
+              <div class="weibo"><a href="http://weibo.com/beibaotu2010" target="_blank">背包兔官方微博</a><img src="/images/index/weibo.png" width="110px" height="100px" alt="背包兔微博二维码"/></div>
+              <div class="weixin"><a href="javascript:;" target="_blank">背包兔官方微信</a><img src="/images/index/weixin2.png" width="110px" height="100px" alt="背包兔微信二维码"/></div>
+          </div>
+           -->
+    </div>
+
+    <script>
+        $(function(){
+            //jump
+            $(".features li").click(function(){
+                var where = $(this).attr("class").replace(" icons", "");
+
+                $(window).scrollTop($("div[class^='"+ where +"']").offset().top - 100);
+
+                //TODO: add goto top?
+            });
+
+            //lazyload img
+            $("img[data-original]").lazyload({
+            });
+        });
+    </script>
+    <div id="footer">
+        <div class="footer-nav clearfix">
+            <span>&reg;2008-<script>document.write(new Date().getFullYear());</script> <a href="http://www.beibaotu.com/">背包兔</a> (蜀ICP备11014470号)</span>
+            <ul>
+                <li><a href="http://www.beibaotu.com/about" target= "_blank" >关于我们</a></li>
+
+                <li>
+                    <!-- Live800在线客服图标:意见反馈[文本图标] 开始-->
+                    <div style='display:none;'><a href='http://www.live800.com'>客服</a></div><script language="javascript" src="http://chat56.live800.com/live800/chatClient/textButton.js?jid=1641362346&companyID=186226&configID=73847&codeType=custom"></script><script id='write' language="javascript">function writehtml(){var temptext=text_generate();try{document.getElementById('live73847').innerHTML=temptext}catch(e){};setTimeout('write.src',9000);}writehtml();</script><div style='display:none;'><a href='http://en.live800.com'>live chat</a></div>
+                    <!-- 在线客服图标:意见反馈 结束-->
+                    <!-- Live800默认跟踪代码: 开始-->
+                    <script language="javascript" src="http://chat56.live800.com/live800/chatClient/monitor.js?jid=1641362346&companyID=186226&configID=59094&codeType=custom"></script>
+                    <!-- Live800默认跟踪代码: 结束-->
+                </li>
+                <li><a href="http://www.beibaotu.com/contact" target= "_blank" >联系我们</a></li>
+                <li><a href="http://www.beibaotu.com/plans/help" target= "_blank" >帮助</a></li>
+                <li><a href="http://www.beibaotu.com/jobs" target= "_blank" >加入我们</a></li>
+                <li><a href="http://www.beibaotu.com/sitemap.html" target= "_blank" >网站地图</a></li>
+                <li><a href="http://www.beibaotu.com/lvguan" target= "_blank" >旅馆</a></li>
+                <li><a href="http://www.beibaotu.com/download" target= "_blank" >App下载</a></li>
+                <li><a href="http://news.beibaotu.com" target= "_blank">旅游资讯</a></li>
+                <li>|</li>
+                <li>关注我们：</li>
+                <li><a class="sina" href="http://weibo.com/beibaotu2010" target= "_blank" >新浪微博</a></li>
+                <li><a class="wechat" href="/weixin" target= "_blank" id="js-show-wx-qrcode">微信</a></li>
+            </ul>
+            <div class="wechat-code js-wechat-code" style="display: none;">
+                <img class="code-angle" src="/images/base/wechat-arrow.jpg">
+                <img alt="背包兔微信二维码" src="/images/app/weixin-pic.png" width="300px" height="300px"/>
+            </div>
+        </div>
+    </div>
+    <!--[if lte IE 6]>
+    <script src='http://s2.beibaotu.com/javascripts/jquery.fixpng.js?1372652129'></script><script>
+        $(document).ready(function(){
+            DD_belatedPNG.fix(".fixpng");
+        });
+    </script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe348ba2b68ad74b123a01702ca1ff2aa' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+</div>
+<div id="js-notice">
+    <div class="inner"></div>
+</div>
+<div class="feedback_fix">
+    <a title="点击回到顶部" href="javascript:;" id="go_to_top" style="display: none"><img width="16" height="16" src="/images/base/go_to_top.png" class="fixpng" /></a>
+</div>
+</body>
+</html>

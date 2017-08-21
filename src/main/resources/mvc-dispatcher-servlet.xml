@@ -1,0 +1,63 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- 组件扫描 -->
+    <context:component-scan base-package="com.yztc.beibaotu"/>
+    <!--.do请求才又能被正确捕捉和处理-->
+    <mvc:annotation-driven/>
+    <!--加载静态资源文件，例如：css或者js-->
+    <mvc:resources mapping="/css/**" location="/css/"/>
+
+    <!-- 视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- 读取属性文件 -->
+    <util:properties id="jdbcprop" location="classpath:db.properties"/>
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="#{jdbcprop.driverName}"/>
+        <property name="jdbcUrl" value="#{jdbcprop.url}"/>
+        <property name="user" value="#{jdbcprop.user}"/>
+        <property name="password" value="#{jdbcprop.password}"/>
+    </bean>
+
+    <!-- 多部分文件上传 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="104857600" />
+        <property name="maxInMemorySize" value="4096" />
+        <property name="defaultEncoding" value="UTF-8"></property>
+    </bean>
+
+    <!-- 定义sqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="typeAliasesPackage" value="com.yztc.china_ucsp.entity"/>
+        <property name="mapperLocations" value="classpath:com/yztc/beibaotu/springmvc/mapper/*.xml"/>
+    </bean>
+
+    <!-- 定义生成mapper接口代理实现的bean -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+        <property name="basePackage" value="com.yztc.china_ucsp.mapper"/>
+    </bean>
+
+
+    <!-- 声明式事务 myBatis采用spring jdbc的事物处理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!-- 打开事务注解开关 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+
+</beans>
